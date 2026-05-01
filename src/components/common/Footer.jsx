@@ -7,25 +7,16 @@ import {
 import { TiSocialFacebook } from "react-icons/ti";
 import { FiInstagram } from "react-icons/fi";
 
-/* ─── Links as per your Navbar/Healthcare theme ─────────────────────────── */
+/* ─── Links Updated: Only Home, About, Booking, FAQ, Doctors ────────────── */
 const NAV_LINKS = {
-  "Services": [
+  "Quick Links": [
     { label: "Home", route: "/" },
-    { label: "Find Doctors", route: "/doctors" },
-    { label: "Book Appointment", route: "/book" },
-    { label: "Health Packages", route: "/packages" },
-  ],
-  "Company": [
     { label: "About Us", route: "/about" },
-    { label: "Our Team", route: "/team" },
-    { label: "Contact Us", route: "/contact" },
-    { label: "Privacy Policy", route: "/privacy" },
+    { label: "Find Doctors", route: "/doctors" },
   ],
   "Support": [
+    { label: "Book Appointment", route: "/book" },
     { label: "FAQs", route: "/faq" },
-    { label: "Terms of Service", route: "/terms" },
-    { label: "Help Center", route: "/help" },
-    { label: "Emergency Care", route: "/emergency" },
   ],
 };
 
@@ -35,12 +26,6 @@ const CONTACT = [
   { icon: <FaEnvelope size={11} />, text: "support@medicare.com", href: "mailto:support@medicare.com" },
 ];
 
-const SOCIALS = [
-  { icon: <TiSocialFacebook size={20} />, href: "#", label: "Facebook", color: "#1877f2" },
-  { icon: <FiInstagram size={16} />, href: "#", label: "Instagram", color: "#e4405f" },
-  { icon: <FaTwitter size={16} />, href: "#", label: "Twitter", color: "#1da1f2" },
-  { icon: <FaYoutube size={16} />, href: "#", label: "YouTube", color: "#ff0000" },
-];
 
 /* ─── FooterColumn Component ────────────────────────────────────────────── */
 const FooterColumn = ({ title, links }) => {
@@ -78,10 +63,8 @@ const FooterColumn = ({ title, links }) => {
 
 /* ─── Main Footer Component ────────────────────────────────────────────── */
 const Footer = () => {
-  const navigate = useNavigate();
-
   return (
-    <footer className="relative bg-[#0A1128] text-white pt-16 pb-8 overflow-hidden">
+    <footer className="relative bg-[#0A1128] text-white pt-15 pb-5 overflow-hidden">
       
       {/* Background Subtle Effects (Blue Theme) */}
       <div className="absolute inset-0 pointer-events-none">
@@ -96,7 +79,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-12 border-b border-white/5">
 
           {/* COL 1: Logo & Intro */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
+          <div className="lg:col-span-6 flex flex-col gap-6">
             <div className="text-2xl font-bold tracking-tight">
               <span>Medi</span><span className="text-blue-500">Care</span><span className="ml-1 text-blue-400">+</span>
             </div>
@@ -121,36 +104,12 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* COL 2: Navigation Links */}
-          <div className="lg:col-span-5">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+          {/* COL 2: Updated Navigation Links */}
+          <div className="lg:col-span-6">
+            <div className="grid grid-cols-2 gap-8">
               {Object.entries(NAV_LINKS).map(([title, links]) => (
                 <FooterColumn key={title} title={title} links={links} />
               ))}
-            </div>
-          </div>
-
-          {/* COL 3: Socials & Newsletter Concept */}
-          <div className="lg:col-span-3 flex flex-col gap-6">
-            <h5 className="text-white font-bold text-[16px] pb-2 relative">
-              Follow Us
-              <span className="absolute bottom-0 left-0 w-8 h-[2px] rounded-full bg-blue-500" />
-            </h5>
-            <div className="flex gap-4">
-              {SOCIALS.map((s, i) => (
-                <a
-                  key={i}
-                  href={s.href}
-                  className="w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 hover:scale-110 transition-all duration-300 relative group overflow-hidden"
-                >
-                  <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: s.color }} />
-                  <span className="relative z-10 text-gray-300 group-hover:text-white">{s.icon}</span>
-                </a>
-              ))}
-            </div>
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-blue-600/10 to-transparent border border-blue-500/10">
-              <p className="text-[13px] text-blue-300 font-medium mb-1">Emergency?</p>
-              <p className="text-[12px] text-gray-400 italic">Our support team is available 24/7 for critical assistance.</p>
             </div>
           </div>
         </div>

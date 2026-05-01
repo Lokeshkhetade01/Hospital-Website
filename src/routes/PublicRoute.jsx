@@ -8,6 +8,9 @@ import Profile from "../components/pages/profile/Profile";
 import EditProfile from "../components/pages/profile/EditProfile";
 import Login from "../components/pages/auth/Login";
 import Register from "../components/pages/auth/Register";
+import MyBooking from "../components/pages/doctors/MyBooking";
+import About from "../components/pages/about/About";
+import Faq from "../components/pages/faq/Faq";
 const Home = lazy(() => import("../components/pages/Home"));
 const PageLoader = () => (
   <div className="flex flex-col items-center justify-center min-h-screen">
@@ -39,8 +42,11 @@ export default function PublicRoute () {
           {/* Home */}
           <Route path="/" element={<Home />} />
           <Route path="/doctors" element={<Doctors />} />
-          <Route path="/book/:doctorName" element={<BookingPage />} />
+          <Route path="/book/:doctorId" element={<BookingPage />} />
           <Route path="/profile" element={<Profile userData={userData} />} />
+          <Route path="/booking" element={<MyBooking/>} />
+          <Route path="/about" element={<About/>} />
+          <Route path="/faq" element={<Faq/>} />
           <Route
             path="/profile/edit-profile"
             element={<EditProfile userData={userData} onSave={handleSave} />}
