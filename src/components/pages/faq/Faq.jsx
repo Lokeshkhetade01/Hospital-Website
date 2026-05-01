@@ -83,7 +83,7 @@ const Faq = () => {
             <div className="text-center text-red-500 p-6 bg-red-50 rounded-2xl">
               Galti hui: {error}
             </div>
-          ) : faqs.length > 0 ? (
+          ) : faqs?.length > 0 ? (
             faqs.map((item, index) => (
               <AccordionItem
                 key={item._id}

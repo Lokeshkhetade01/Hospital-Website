@@ -24,7 +24,7 @@ const faqSlice = createSlice({
       })
       .addCase(fetchPublicFaqs.fulfilled, (state, action) => {
         state.loading = false;
-        state.data = action.payload.Faqs; // Accessing the "Faqs" key from your response
+        state.data = action.payload?.Faqs || []; // Accessing the "Faqs" key from your response
       })
       .addCase(fetchPublicFaqs.rejected, (state, action) => {
         state.loading = false;
