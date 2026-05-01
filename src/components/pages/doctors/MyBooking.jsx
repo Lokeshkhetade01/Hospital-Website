@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   fetchMyBookings,
   cancelAppointment,
-} from "../../../redux/slices/booking/mybooking";
+} from "../../../redux/slices/booking/myBooking";
 import {
   Calendar,
   Clock,
