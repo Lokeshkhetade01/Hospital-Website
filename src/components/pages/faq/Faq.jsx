@@ -68,7 +68,7 @@ const Faq = () => {
             Frequently Asked <span className="text-blue-600">Questions</span>
           </h2>
           <p className="text-gray-500 max-w-lg mx-auto">
-            MediCare+ ke baare mein sab kuch jaaniye. Agar aapka sawaal yahan nahi hai, toh humse sampark karein.
+            Discover everything you need to know about MediCare+. If you can't find the answers you're looking for, please don't hesitate to reach out to us.
           </p>
         </div>
 

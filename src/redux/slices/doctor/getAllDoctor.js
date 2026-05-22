@@ -1,13 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-// Async thunk to fetch doctors
+
 export const fetchDoctors = createAsyncThunk(
   "doctors/fetchDoctors",
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(`${BASE_URL}/api/doctors`);
-      return response.data; // This returns the object containing the doctors array
+      return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);
     }
